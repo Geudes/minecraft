@@ -7,9 +7,9 @@ function Header() {
         <>
             <header className="header">
                 <nav className='header__nav nav'>
-                    <NavLink to={'/'} className={({ isActive }) => isActive ? 'nav__item' : 'nav__item item--active'}>Сервера</NavLink>
-                    <NavLink to={'/auth/login'} className={({ isActive }) => isActive ? 'nav__item' : 'nav__item item--active'}>Авторизация</NavLink>
-                    <NavLink to={'/auth/register'} className={({ isActive }) => isActive ? 'nav__item' : 'nav__item item--active'}>Регистрация</NavLink>
+                    <NavLink to={'/'} className={({ isActive }) => isActive ? 'nav__item item--active' : 'nav__item'}>Сервера</NavLink>
+                    <NavLink to={'/auth/login'} className={({ isActive }) => isActive ? 'nav__item item--active' : 'nav__item'}>Авторизация</NavLink>
+                    <NavLink to={'/auth/register'} className={({ isActive }) => isActive ? 'nav__item item--active' : 'nav__item'}>Регистрация</NavLink>
                 </nav>
             </header>
         </>

@@ -1,13 +1,15 @@
 export type UserRole = 'Admin' | 'Creater' | 'User'
 
 export type UserType = {
-    username: string,
-    role: UserRole,
-    email: string,
     id: number | string,
+    username: string,
+    email: string,
+    role: UserRole,
+    displayName?: string,
 }
 
-export type UserAuthType = Pick<UserType, 'email' | 'username' | 'dispayName'> & { password: string }
+
+export type UserAuthType = Pick<UserType, 'email' | 'username' | 'displayName'> & { password: string }
 
 export type AuthServerType = {
     accessToken: string,

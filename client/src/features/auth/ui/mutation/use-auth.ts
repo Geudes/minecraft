@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "react-router"
-import type { UserAuthType } from "../../types";
+import type { AuthType, UserAuthType } from "../../types";
 import AuthApi from "../../api/auth-api";
 import { authStorage } from "../../models/auth-storage";
 
@@ -9,7 +9,7 @@ export const useAuth = () => {
     const queryClient = useQueryClient();
 
     const auth = useMutation({
-        mutationFn:(form:UserAuthType) => AuthApi.auth(form),
+        mutationFn:(form:AuthType) => AuthApi.auth(form),
         onSuccess:(data) => {
             authStorage.setAccess(data?.accessToken)
             authStorage.setUser(data?.user)

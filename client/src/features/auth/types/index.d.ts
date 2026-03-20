@@ -11,6 +11,8 @@ export type UserType = {
 
 export type UserAuthType = Pick<UserType, 'email' | 'username' | 'displayName'> & { password: string }
 
+export type AuthType = Omit<UserType, 'username' | 'id' | 'role'> & { password: string }
+
 export type AuthServerType = {
     accessToken: string,
     user: UserType,

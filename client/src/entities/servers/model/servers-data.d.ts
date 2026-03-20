@@ -11,11 +11,3 @@ export type serversDataType = {
     status: string,
     type: string
 }
-
-export type userType = { 
-    username: string,
-    email: string,
-    role: 'Admin' | 'User' | 'Creater'
-}
-
-export type registerType = { passsowrd: string } & userType

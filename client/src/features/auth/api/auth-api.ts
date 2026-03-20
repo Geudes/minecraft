@@ -1,9 +1,9 @@
 
 import axiosInstance from "../../../shared/lib/api/axios-instance";
-import type { AuthServerType, UserAuthType } from "../types";
+import type { AuthServerType, AuthType, UserAuthType } from "../types";
 
 class AuthApi{
-static async auth(form:UserAuthType):Promise<AuthServerType>{
+static async auth(form:AuthType):Promise<AuthServerType>{
     const {data} = await axiosInstance.post<AuthServerType>('/auth/login', form)
     return data
 } 

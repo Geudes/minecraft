@@ -20,7 +20,8 @@ class Database:
         self.session = async_sessionmaker(
             self.engine,
             class_=AsyncSession,
-            autoflush=False
+            autoflush=autoflush
+
         )
         
         

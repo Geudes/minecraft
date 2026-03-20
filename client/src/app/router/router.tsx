@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router";
 import Layout from "../layout/layout";
-import AuthPage from "../../pages/auth/AuthPage";
-import RegisterPage from "../../pages/auth/RegisterPage";
 import ServresPage from "../../pages/Servers/ServersPage";
+import AuthLayout from "../../features/auth/ui/auth-layout";
+import AuthPage from "../../pages/auth/auth-page";
+import RegisterPage from "../../pages/auth/register-page";
 
 export const router = createBrowserRouter([
     {
@@ -10,17 +11,23 @@ export const router = createBrowserRouter([
         element: <Layout />,
         children: [
             {
-                path: '/',
+                index: true,
                 element: <ServresPage />
             },
             {
-                path: '/auth',
-                element: <AuthPage />
-            },
-            {
-                path: '/register',
-                element: <RegisterPage />
-            },
+                path: 'auth',
+                element: <AuthLayout />,
+                children: [
+                    {
+                        path: 'login',
+                        element: <AuthPage />
+                    },
+                    {
+                        path: 'register',
+                        element: <RegisterPage />
+                    }
+                ]
+            }
         ]
     }
 ])

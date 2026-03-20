@@ -1,15 +1,19 @@
 import { NavLink } from 'react-router'
 
+import './header.css'
+
 function Header() {
-  return (
-    <>
-        <nav>
-            <NavLink to={'/'} style={({ isActive }) => ({ backgroundColor: isActive ? '#e6e6e6ea' : '' })}>Сервера</NavLink>
-            <NavLink to={'/auth'} style={({ isActive }) => ({ backgroundColor: isActive ? '#e6e6e6ea' : '' })}>Авторизация</NavLink>
-            <NavLink to={'/register'} style={({ isActive }) => ({ backgroundColor: isActive ? '#e6e6e6ea' : '' })}>Регистрация</NavLink>
-        </nav>
-    </>
-  )
+    return (
+        <>
+            <header className="header">
+                <nav className='header__nav nav'>
+                    <NavLink to={'/'} className={({ isActive }) => isActive ? 'nav__item item--active' : 'nav__item'}>Сервера</NavLink>
+                    <NavLink to={'/auth/login'} className={({ isActive }) => isActive ? 'nav__item item--active' : 'nav__item'}>Авторизация</NavLink>
+                    <NavLink to={'/auth/register'} className={({ isActive }) => isActive ? 'nav__item item--active' : 'nav__item'}>Регистрация</NavLink>
+                </nav>
+            </header>
+        </>
+    )
 }
 
 export default Header

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { authStorage } from "../../../features/auth/models/auht-storage";
+import { authStorage } from "../../../features/auth/models/auth-storage";
 
 const baseURL: string = import.meta.env.VITE_BACK_URL
 
@@ -21,3 +21,5 @@ axiosInstance.interceptors.request.use(
         return config
     }, (error) => Promise.reject(error)
 )
+
+export default axiosInstance

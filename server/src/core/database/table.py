@@ -1,8 +1,10 @@
 from uuid import uuid4
 from datetime import datetime
 from uuid import UUID
-from sqlalchemy import UUID as SQL_UUID, DateTime, String
+from sqlalchemy import UUID as SQL_UUID, DateTime, String, Integer, Enum
 from sqlalchemy.orm import DeclarativeBase, mapped_column, Mapped, declared_attr
+
+from server.src.application.rest.v1.schemas.server import ServerStatus
 
 
 class TableSQLBase(DeclarativeBase):
@@ -18,3 +20,18 @@ class TableSQLBase(DeclarativeBase):
 class User(TableSQLBase):
     username: Mapped[str] = mapped_column(String(50), nuleble=False)
     password: Mapped[str] = mapped_column(String(255), nuleble=False)
+
+
+class Server(TableSQLBase):
+    class Server(TableSQLBase):
+        img_url: Mapped[str | None] = mapped_column(String(500))
+        name: Mapped[str] = mapped_column(String(100))
+        ip_address: Mapped[str] = mapped_column(String(45))
+        port: Mapped[int] = mapped_column(Integer, default=25565)
+        version: Mapped[str] = mapped_column(String(20))
+        max_players: Mapped[int] = mapped_column(Integer, default=20)
+        online_players: Mapped[int] = mapped_column(Integer, default=0)
+        status: Mapped[ServerStatus] = mapped_column(
+            Enum(ServerStatus), default=ServerStatus.OFFLINE
+        )
+        type: Mapped[str] = mapped_column(String(50), nullable=False)

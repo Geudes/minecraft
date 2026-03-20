@@ -21,17 +21,5 @@ class Database:
             self.engine,
             class_=AsyncSession,
             autoflush=autoflush
-
         )
-        
-        
-    async def get_session(self):
-        async with self.session() as session:
-            try:
-                yield session
-                await session.flush()
-            except Exception as e:
-                await session.rollback()
-            finally:
-                await session.close()
             

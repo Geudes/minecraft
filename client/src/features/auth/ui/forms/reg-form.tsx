@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form"
 import { registerSchema } from "../../models/auth-schemes"
 
 import './forms.css'
+import { useAuth } from "../mutation/use-auth"
+import type { UserAuthType } from "../../types"
 
 function RegisterForm() {
-
+ const {register:registerMutation} = useAuth()
   const {
     register,
     handleSubmit,
@@ -13,9 +15,11 @@ function RegisterForm() {
   } = useForm({
     resolver: zodResolver(registerSchema)
   })
-
+  const onRegister = (form:UserAuthType) => {
+    registerMutation.mutate(form)
+  }
   return (
-    <form onSubmit={handleSubmit} className="auth-form">
+    <form onSubmit={handleSubmit(onRegister)} className="auth-form">
       <div className="auth-form__field field">
         <label htmlFor="username">Имя пользователя</label>
         <input type="text" {...register('username')}/>

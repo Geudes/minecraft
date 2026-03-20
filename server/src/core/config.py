@@ -10,3 +10,5 @@ class Settings(BaseSettings):
     DATABASE_URL: str ="sqlite+aiosqlite:///./database.sqlite3"
     JWT_ALG: str ='HS256'
     JWT_KEY: str ='JWT_KEY'
+
+settings = Settings()

@@ -1,6 +1,8 @@
+export type UserRole = 'Admin' | 'Creater' | 'User'
+
 export type UserType = {
     username: string,
-    dispayName: string,
+    role: UserRole,
     email: string,
     id: number | string,
 }

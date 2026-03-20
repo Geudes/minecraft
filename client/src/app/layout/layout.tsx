@@ -1,7 +1,14 @@
+import { Outlet } from "react-router"
+import Header from "../../widgets/header/header"
 
 function Layout() {
   return (
-    <div>Layout</div>
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+    </>
   )
 }
 

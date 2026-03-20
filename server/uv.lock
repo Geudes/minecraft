@@ -274,6 +274,27 @@ wheels = [
 ]
 
 [[package]]
+name = "click"
+version = "8.3.1"
+source = { registry = "http://packages.webflare.ru:8888/simple" }
+dependencies = [
+    { name = "colorama", marker = "sys_platform == 'win32'" },
+]
+sdist = { url = "http://packages.webflare.ru:8888/download/click/8.3.1/click-8.3.1.tar.gz" }
+wheels = [
+    { url = "http://packages.webflare.ru:8888/download/click/8.3.1/click-8.3.1-py3-none-any.whl" },
+]
+
+[[package]]
+name = "colorama"
+version = "0.4.6"
+source = { registry = "http://packages.webflare.ru:8888/simple" }
+sdist = { url = "http://packages.webflare.ru:8888/download/colorama/0.4.6/colorama-0.4.6.tar.gz" }
+wheels = [
+    { url = "http://packages.webflare.ru:8888/download/colorama/0.4.6/colorama-0.4.6-py2.py3-none-any.whl" },
+]
+
+[[package]]
 name = "cryptography"
 version = "46.0.5"
 source = { registry = "http://packages.webflare.ru:8888/simple" }
@@ -444,6 +465,15 @@ wheels = [
     { url = "http://packages.webflare.ru:8888/download/greenlet/3.3.2/greenlet-3.3.2-cp314-cp314t-musllinux_1_2_aarch64.whl" },
     { url = "http://packages.webflare.ru:8888/download/greenlet/3.3.2/greenlet-3.3.2-cp314-cp314t-musllinux_1_2_x86_64.whl" },
     { url = "http://packages.webflare.ru:8888/download/greenlet/3.3.2/greenlet-3.3.2-cp314-cp314t-win_amd64.whl" },
+]
+
+[[package]]
+name = "h11"
+version = "0.16.0"
+source = { registry = "http://packages.webflare.ru:8888/simple" }
+sdist = { url = "http://packages.webflare.ru:8888/download/h11/0.16.0/h11-0.16.0.tar.gz" }
+wheels = [
+    { url = "http://packages.webflare.ru:8888/download/h11/0.16.0/h11-0.16.0-py3-none-any.whl" },
 ]
 
 [[package]]
@@ -838,6 +868,7 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "pyjwt" },
     { name = "sqlalchemy" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
@@ -851,6 +882,7 @@ requires-dist = [
     { name = "pydantic-settings", specifier = ">=2.13.1" },
     { name = "pyjwt", specifier = ">=2.12.1" },
     { name = "sqlalchemy", specifier = ">=2.0.48" },
+    { name = "uvicorn", specifier = ">=0.42.0" },
 ]
 
 [[package]]
@@ -923,6 +955,19 @@ dependencies = [
 sdist = { url = "http://packages.webflare.ru:8888/download/typing-inspection/0.4.2/typing_inspection-0.4.2.tar.gz" }
 wheels = [
     { url = "http://packages.webflare.ru:8888/download/typing-inspection/0.4.2/typing_inspection-0.4.2-py3-none-any.whl" },
+]
+
+[[package]]
+name = "uvicorn"
+version = "0.42.0"
+source = { registry = "http://packages.webflare.ru:8888/simple" }
+dependencies = [
+    { name = "click" },
+    { name = "h11" },
+]
+sdist = { url = "http://packages.webflare.ru:8888/download/uvicorn/0.42.0/uvicorn-0.42.0.tar.gz" }
+wheels = [
+    { url = "http://packages.webflare.ru:8888/download/uvicorn/0.42.0/uvicorn-0.42.0-py3-none-any.whl" },
 ]
 
 [[package]]
